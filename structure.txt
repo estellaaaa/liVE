@@ -1,0 +1,38 @@
+liVe/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── App.js
+│   │   ├── Navigation.js
+│   │   ├── Home.js
+│   │   ├── User/
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   ├── Profile.js
+│   │   │   └── ...
+│   │   ├── RunningTracker/
+│   │   │   ├── RunningTracker.js
+│   │   │   ├── RunningRoute.js
+│   │   │   └── ...
+│   │   ├── PlantTracker/
+│   │   │   ├── PlantTracker.js
+│   │   │   ├── Plant.js
+│   │   │   └── ...
+│   │   └── CleaningSchedule/
+│   │       ├── CleaningSchedule.js
+│   │       ├── CleaningTask.js
+│   │       └── ...
+│   ├── services/
+│   │   ├── authService.js
+│   │   ├── userService.js
+│   │   ├── runningTrackerService.js
+│   │   ├── plantTrackerService.js
+│   │   └── cleaningScheduleService.js
+│   ├── App.css
+│   ├── index.js
+│   └── ...
+├── package.json
+└── ...
