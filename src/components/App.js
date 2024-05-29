@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navigation from './Navigation';
+import PlantTracker from './Modules/PlantTracker/PlantTracker';
+import CleaningSchedule from './Modules/CleaningSchedule/CleaningSchedule';
+import RunningTracker from './Modules/RunningTracker/RunningTracker';
 
-function App() {
+const App = () => {
+  const [modules, setModules] = useState([]);
+
+  useEffect(() => {
+    // Fetch your modules here and update the state
+    setModules([
+      { id: 'planttracker', name: 'Plant Tracker', component: PlantTracker },
+      { id: 'cleaningschedule', name: 'Cleaning Schedule', component: CleaningSchedule },
+      { id: 'runningtracker', name: 'Running Tracker', component: RunningTracker },
+    ]);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navigation modules={modules} />
+      <Routes>
+        {modules.map(module => (
+          <Route key={module.id} path={`/${module.id}`} element={<module.component />} />
+        ))}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
